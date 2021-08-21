@@ -1,0 +1,26 @@
+{
+  "name": "tailwind-unit-replace",
+  "version": "0.1.0",
+  "repository": "huygn/tailwind-unit-replace",
+  "description": "WIP",
+  "license": "MIT",
+  "types": "index.d.ts",
+  "type": "commonjs",
+  "files": ["index.js", "index.d.ts"],
+  "engines": {
+    "node": ">=12.10"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "types": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "tailwindcss": "^1.9.0 || ^2.0.0"
+  },
+  "devDependencies": {
+    "@types/tailwindcss": "^2.2.1",
+    "rollup": "^2.56.2",
+    "typescript": "^4.3.5"
+  }
+}

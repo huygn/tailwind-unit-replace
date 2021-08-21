@@ -1,0 +1,1 @@
+type Options = import("../..").Options;

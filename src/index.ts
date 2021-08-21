@@ -9,10 +9,7 @@ export * from "./rem-unit-regex";
 // then apply `replacer` to it
 function processTheme(
   theme: Record<string, {} | string>,
-  {
-    exclude = [],
-    replacer = (v) => v,
-  }: Omit<Options, "exclude"> & { exclude?: string[] } = {}
+  { exclude = [], replacer }: Omit<Options, "exclude"> & { exclude?: string[] }
 ) {
   // might need to deep clone, but seems unecessary
   let replacedTheme = theme;
@@ -24,7 +21,7 @@ function processTheme(
     let val = value;
     switch (typeof value) {
       case "object":
-        val = processTheme(value);
+        val = processTheme(value, { exclude, replacer });
         break;
       case "string":
         val = replacer(value);
@@ -36,12 +33,23 @@ function processTheme(
   return replacedTheme;
 }
 
+const defaultOpts: Partial<Options> = {
+  exclude: ["fontFamily"],
+};
+
 export const replaceTailwindUnit = (opts: Options) => (
   userConfig: TailwindConfig
 ): TailwindConfig => {
-  let { theme, ...config } = resolveConfig([...getAllConfigs(userConfig)]);
+  // parse user's config the way Tailwind does
+  const { theme, ...config } = resolveConfig([...getAllConfigs(userConfig)]);
+
+  const mergedOpts = { ...defaultOpts, ...opts };
+  if (!mergedOpts.replacer || typeof mergedOpts.replacer !== "function") {
+    throw new Error("Replacer function is required");
+  }
+
   return {
     ...config,
-    theme: processTheme(theme, opts),
+    theme: processTheme(theme, mergedOpts),
   };
 };

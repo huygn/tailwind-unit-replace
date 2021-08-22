@@ -46,7 +46,6 @@ module.exports = {
   },
   external: [
     ...require("module").builtinModules,
-    ...Object.keys(pkg.dependencies),
     ...Object.keys(pkg.peerDependencies),
     "tailwindcss/lib/util/resolveConfig",
     "tailwindcss/lib/util/getAllConfigs",

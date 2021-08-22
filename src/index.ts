@@ -40,13 +40,17 @@ const defaultOpts: Partial<Options> = {
 export const replaceTailwindUnit = (opts: Options) => (
   userConfig: TailwindConfig
 ): TailwindConfig => {
-  // parse user's config the way Tailwind does
-  const { theme, ...config } = resolveConfig([...getAllConfigs(userConfig)]);
+  if (!userConfig) {
+    throw new Error("tailwindcss config is required");
+  }
 
   const mergedOpts = { ...defaultOpts, ...opts };
   if (!mergedOpts.replacer || typeof mergedOpts.replacer !== "function") {
-    throw new Error("Replacer function is required");
+    throw new Error("replacer function is required");
   }
+
+  // parse user's config the way Tailwind does
+  const { theme, ...config } = resolveConfig([...getAllConfigs(userConfig)]);
 
   return {
     ...config,

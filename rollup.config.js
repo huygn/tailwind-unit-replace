@@ -40,7 +40,7 @@ module.exports = {
     format: "cjs",
     file: "index.js",
     esModule: false,
-    interop: false,
+    interop: true,
     strict: false,
     freeze: false,
   },

@@ -9,4 +9,4 @@ export function replaceTailwindUnit(
   opts: Options
 ): (cfg: TailwindConfig) => TailwindConfig;
 
-export function toREM(value: string): string;
+export function toEM(value: string): string;

@@ -2,7 +2,7 @@ import resolveConfig from "tailwindcss/lib/util/resolveConfig";
 import getAllConfigs from "tailwindcss/lib/util/getAllConfigs";
 import type { TailwindConfig } from "tailwindcss/tailwind-config";
 
-export * from "./utils";
+export * from "./extras";
 export * from "./rem-unit-regex";
 
 // recursively walks object/array to find a string value,

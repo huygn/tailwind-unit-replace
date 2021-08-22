@@ -10,6 +10,11 @@
     "index.js",
     "index.d.ts"
   ],
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "nodejs"
+  ],
   "author": {
     "name": "Huy Giang",
     "email": "gnhuy91@gmail.com",

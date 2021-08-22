@@ -5,7 +5,7 @@ export type Options = {
   replacer: (v: string) => string;
 };
 
-export function replaceTalwindUnit(
+export function replaceTailwindUnit(
   opts: Options
 ): (cfg: TailwindConfig) => TailwindConfig;
 

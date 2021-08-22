@@ -16,7 +16,7 @@
   "scripts": {
     "build": "rollup -c",
     "types": "tsc --noEmit",
-    "prepublish": "npm run types && npm run build"
+    "prepare": "npm run types && npm run build"
   },
   "dependencies": {
     "@types/tailwindcss": "^2.2.1"

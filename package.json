@@ -29,7 +29,8 @@
   "scripts": {
     "build": "rollup -c",
     "types": "tsc --noEmit",
-    "prepare": "npm run types && npm run build"
+    "test": "uvu -r esbuild-register src \".test.ts$\"",
+    "prepublish": "npm run test && npm run build"
   },
   "dependencies": {
     "@types/tailwindcss": "^2.2.1"
@@ -38,7 +39,10 @@
     "tailwindcss": "^1.9.0 || ^2.0.0"
   },
   "devDependencies": {
+    "esbuild": "^0.12.22",
+    "esbuild-register": "^3.0.0",
     "rollup": "^2.56.2",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "uvu": "^0.5.1"
   }
 }

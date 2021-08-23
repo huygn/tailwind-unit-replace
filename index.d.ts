@@ -10,3 +10,4 @@ export function replaceTailwindUnit(
 ): (cfg: TailwindConfig) => TailwindConfig;
 
 export function toEM(value: string): string;
+export function toPX(value: string): string;

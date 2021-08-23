@@ -10,3 +10,13 @@ export function toEM(value: string) {
     return `${amount}em`;
   });
 }
+
+export function toPX(value: string) {
+  return value.replace(remUnitRegex, (match, remDigit) => {
+    const amount = Number(remDigit);
+    if (Number.isNaN(amount)) {
+      return match;
+    }
+    return `${amount * 16}px`;
+  });
+}

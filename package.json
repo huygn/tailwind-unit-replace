@@ -1,6 +1,6 @@
 {
   "name": "tailwind-unit-replace",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Helpers to replace Tailwind's default rem unit with anything like px or em.",
   "license": "MIT",
   "type": "commonjs",

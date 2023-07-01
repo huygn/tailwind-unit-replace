@@ -15,6 +15,7 @@
     "module": "esnext",
     "allowJs": false,
     "noEmit": true,
+    "skipLibCheck": true,
     "baseUrl": "."
   },
   "include": ["src"],

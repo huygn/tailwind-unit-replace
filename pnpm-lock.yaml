@@ -8,10 +8,8 @@ specifiers:
   typescript: ^4.3.5
   uvu: ^0.5.1
 
-dependencies:
-  '@types/tailwindcss': 2.2.1
-
 devDependencies:
+  '@types/tailwindcss': 2.2.1
   esbuild: 0.12.22
   esbuild-register: 3.0.0_esbuild@0.12.22
   rollup: 2.56.3
@@ -22,7 +20,7 @@ packages:
 
   /@types/tailwindcss/2.2.1:
     resolution: {integrity: sha512-raLwtQF+uul9lsvs7+GUizeNrpxRqbnckIu/va5hzPPwZsImZunkyLFAS/1rwEHhhvFMNiMJmTiP5PPGa0oNJA==}
-    dev: false
+    dev: true
 
   /dequal/2.0.2:
     resolution: {integrity: sha512-q9K8BlJVxK7hQYqa6XISGmBZbtQQWVXSrRrWreHC94rMt1QL/Impruc+7p2CYSYuVIUr+YCt6hjrs1kkdJRTug==}
